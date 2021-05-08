@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ProjectZeus.Database;
 
 namespace ProjectZeus
 {
@@ -51,6 +53,10 @@ namespace ProjectZeus
             {
                 endpoints.MapRazorPages();
             });
+
+            //Force the database to be up to date
+            var context = new ZeusContext();
+            context.Database.Migrate();
         }
     }
 }

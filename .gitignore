@@ -1,2 +1,4 @@
 bin/
 obj/
+.vs/ProjectZeus/config/applicationhost.config
+.vs/
