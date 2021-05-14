@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProjectZeus.Database.Model
 {
-    public class Deity
+    public class God
     {
         public int Id { get; set; }
         public string Name { get; set; }

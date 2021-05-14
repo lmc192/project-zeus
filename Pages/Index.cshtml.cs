@@ -14,7 +14,7 @@ namespace ProjectZeus.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public List<Deity> Deities { get; set; }
+        public List<God> Gods { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -24,11 +24,11 @@ namespace ProjectZeus.Pages
         public void OnGet()
         {
             var context = new ZeusContext();
-            Deities= new List<Deity>();
-            var deityList = context.Deities.Include(d => d.Mythology).OrderBy(d => d.Name);
-            foreach (var deity in deityList)
+            Gods = new List<God>();
+            var godList = context.Gods.Include(d => d.Mythology).OrderBy(d => d.Name);
+            foreach (var god in godList)
             {
-                Deities.Add(deity);
+                Gods.Add(god);
             }
         }
     }
