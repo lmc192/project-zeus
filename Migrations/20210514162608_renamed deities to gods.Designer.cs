@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjectZeus.Database;
 
 namespace ProjectZeus.Migrations
 {
     [DbContext(typeof(ZeusContext))]
-    partial class ZeusContextModelSnapshot : ModelSnapshot
+    [Migration("20210514162608_renamed deities to gods")]
+    partial class renameddeitiestogods
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

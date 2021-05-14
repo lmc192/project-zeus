@@ -14,12 +14,12 @@ namespace ProjectZeus.Database
         //then, before you run the code, use the console to do Add-Migration "{name}", when you run it it will automatically update the db
         //or you can do update-database if you prefer
         public virtual DbSet<Mythology> Mythologies { get; set; }
-        public virtual DbSet<Deity> Deities { get; set; }
+        public virtual DbSet<God> Gods { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //PUT SQL CONNECTION STRING BELOW
-            optionsBuilder.UseSqlServer("Server=.;Database=ProjectZeus;Trusted_connection=True;");
+            optionsBuilder.UseSqlServer("Server=tcp:sql-pz-1.database.windows.net,1433;Initial Catalog=db-pz-1;Persist Security Info=False;User ID=SQL_Web;Password=tBoD*D9Sjv@I;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,18 +34,18 @@ namespace ProjectZeus.Database
 
             
             //some dummy seed data
-            modelBuilder.Entity<Deity>().HasData(new List<Deity>
+            modelBuilder.Entity<God>().HasData(new List<God>
             {
-                new Deity {Id = 1, Name = "Odin", MythologyId = 2},
-                new Deity {Id = 2, Name = "Zeus", MythologyId = 1},
-                new Deity {Id = 3, Name = "Loki", MythologyId = 2},
-                new Deity {Id = 4, Name = "Thor", MythologyId = 2},
-                new Deity {Id = 5, Name = "Freya", MythologyId = 2},
-                new Deity {Id = 6, Name = "Hera", MythologyId = 1},
-                new Deity {Id = 7, Name = "Athena", MythologyId = 1},
-                new Deity {Id = 8, Name = "Achilles", MythologyId = 1},
-                new Deity {Id = 9, Name = "Hercules", MythologyId = 1},
-                new Deity {Id = 10, Name = "Hermes", MythologyId = 1}
+                new God {Id = 1, Name = "Odin", MythologyId = 2},
+                new God {Id = 2, Name = "Zeus", MythologyId = 1},
+                new God {Id = 3, Name = "Loki", MythologyId = 2},
+                new God {Id = 4, Name = "Thor", MythologyId = 2},
+                new God {Id = 5, Name = "Freya", MythologyId = 2},
+                new God {Id = 6, Name = "Hera", MythologyId = 1},
+                new God {Id = 7, Name = "Athena", MythologyId = 1},
+                new God {Id = 8, Name = "Achilles", MythologyId = 1},
+                new God {Id = 9, Name = "Hercules", MythologyId = 1},
+                new God {Id = 10, Name = "Hermes", MythologyId = 1}
             });
         }
 

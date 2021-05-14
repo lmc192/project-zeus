@@ -9,19 +9,19 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="deity-table">
+<div class="god-table">
     <table>
         <thead>
         <tr>
-            <th>Deity</th>
+            <th>God</th>
             <th>Mythology</th>
         </tr>
         </thead>
-        @foreach (var deity in @Model.Deities)
+        @foreach (var god in @Model.Gods)
         {
             <tr>
-                <td>@deity.Name</td>
-                <td>@deity.Mythology.Name</td>
+                <td>@god.Name</td>
+                <td>@god.Mythology.Name</td>
             </tr>
         }
     </table>
